@@ -1,0 +1,68 @@
+/* -------------------------- Page / content wrapper styling --------------------------*/
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* ------------------------------------ Timer styling ---------------------------------*/
+
+.timer-box {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #e1aa46;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+/* Timer / screen session styling */
+
+.timer-and-session-count {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:10px;
+}
+
+.timer-screen {
+    background-color: #e1dac7;
+    font-size: 60px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Input section styling */
+.input-values {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.input-values input {
+    width: 50px;
+}
+
+/* Timer button styling */
+.timer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.timer-buttons button {
+    background-color: #65b0bb;
+    border-radius: 25px;
+    border: none;
+    width: 150px;
+    height: 28px;
+}
+
+.timer-buttons button:hover {
+    transition: .5s;
+    background-color: #6577bb;
+}
