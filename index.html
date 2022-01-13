@@ -23,26 +23,29 @@
 
             <!-- Contains input values with labels -->
             <div class="input-values">
-                <form>
-                    <label for="session-number">Session Count:  </label>
-                    <input type="numeric" id="session-number" name="session-number"> 
-                    <br>
-                    <label for="session-length">Session Length:</label>
-                    <input type="numeric" id="session-length" name="session-length"> 
-                    <br>
-                    <label for="short-break-length">Short Break:</label>
-                    <input type="numeric" id="short-break-length" name="short-break-length"> 
-                    <br>
-                    <label for="long-break-length">Long Break:</label>
-                    <input type="numeric" id="long-break-length" name="long-break-length"> 
-                    <br>
+                <form method="post" class="timer-form" id="timer-form">
+                    <fieldset>
+                        <label for="session-number">Session Count:  </label>
+                        <input type="numeric" id="session-number" value=4 name="session-number"> 
+                        <br>
+                        <label for="session-length">Session Length:</label>
+                        <input type="numeric" id="session-length" value=25 name="session-length"> 
+                        <br>
+                        <label for="short-break-length">Short Break:</label>
+                        <input type="numeric" id="short-break-length" value=5 name="short-break-length"> 
+                        <br>
+                        <label for="long-break-length">Long Break:</label>
+                        <input type="numeric" id="long-break-length" value=30 name="long-break-length"> 
+                        <br>
+                    </fieldset>
+                </form>
             </div>
 
             <!-- Reset / refresh button -->
             <div class="timer-buttons">
                 <button type="button" id="start-btn">Start</button>
                 <button type="button" id="pause-btn">Pause</button>
-                <button type="button" id=>Refresh</button>
+                <button type="button" id="refresh-btn">Refresh</button>
             </div>
 
         </div>
