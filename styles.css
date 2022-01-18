@@ -62,7 +62,7 @@
     height: 28px;
 }
 
-.timer-buttons button:hover {
+.timer-buttons button:hover:enabled {
     transition: .5s;
     background-color: #6577bb;
 }
