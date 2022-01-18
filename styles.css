@@ -37,13 +37,18 @@
 /* Input section styling */
 .input-values {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     margin-right: 10px;
     padding: 10px;
 }
 
+input {
+    border-radius: 25px;
+}
+
 .input-values input {
     width: 50px;
+    text-align: center;
 }
 
 /* Timer button styling */
@@ -66,3 +71,16 @@
     transition: .5s;
     background-color: #6577bb;
 }
+
+/* Alarm Button animation */
+#alarm-btn.active { 
+    background-color: #ff0f0f;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: .5;
+    }
+}
+

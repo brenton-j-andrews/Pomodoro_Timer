@@ -9,7 +9,8 @@ let longBreak = document.getElementById("long-break-length");
 // Global variables.
 let intervalID;
 let totalSessionLength;
-
+let alarmOn = false;
+let sound = new Audio("alarm.mp3");
 
 // Start button -> start timer script.
 start_btn.addEventListener("click", function() {
@@ -33,7 +34,9 @@ start_btn.addEventListener("click", function() {
             incrementTimerDisplay(studyLen);
             studyLen--;
 
-            if (studyLen === 0) {
+            if (studyLen === -1) {
+                alarm() 
+                console.log("time for a break!");
                 currentSession--;
                 isBreak = true;
                 studyLen = timer_data.sessionLength;
@@ -44,7 +47,9 @@ start_btn.addEventListener("click", function() {
             incrementTimerDisplay(breakLen);
             breakLen--;
 
-            if (breakLen === 0) {
+            if (breakLen === -1) {
+                alarm() 
+                console.log("back to studying!");
                 isBreak = false;
                 breakLen = timer_data.shortBreak;
                 currentSession--;
@@ -56,7 +61,8 @@ start_btn.addEventListener("click", function() {
             incrementTimerDisplay(longBreakLen);
             longBreakLen--;
 
-            if (longBreakLen === 0) {
+            if (longBreakLen === -1) {
+                alarm() 
                 currentSession--;
             }
         }
@@ -70,10 +76,12 @@ start_btn.addEventListener("click", function() {
 });
 
 // Pause button -> pause interval.
-let pause_btn = document.getElementById("pause-btn");
-pause_btn.addEventListener("click", () => {
-    clearInterval(intervalID);
-});
+let alarm_btn = document.getElementById("alarm-btn");
+alarm_btn.addEventListener("click", () => {
+    sound.pause();
+    sound.currentTime = 0;
+    alarm_btn.classList.remove("active");
+})
 
 // Refresh button -> refresh page with refresh(), restore default values.
 let refresh_btn = document.getElementById("refresh-btn");
@@ -87,6 +95,12 @@ function refresh() {
     longBreak.value = 30;
 }
 
+
+// Sound alarm, add alarm-btn animation.
+function alarm() {
+    sound.play();
+    alarm_btn.classList.add("active");
+}
 
 // Update timer screen display.
 function incrementTimerDisplay(sessionLength) {
