@@ -2,9 +2,18 @@
 
 .content-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
+
+.banner {
+    display: none;
+}
+
+.banner.active {
+    display: inline;
 }
 
 /* ------------------------------------ Timer styling ---------------------------------*/
