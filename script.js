@@ -81,7 +81,7 @@ start_btn.addEventListener("click", function() {
     }, 1000);
 });
 
-// Pause button -> pause interval.
+// Alarm button -> acknowlegde / spot alarm sound.
 let alarm_btn = document.getElementById("alarm-btn");
 alarm_btn.addEventListener("click", () => {
     sound.pause();
